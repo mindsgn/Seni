@@ -137,7 +137,7 @@ public class Player : MonoBehaviour
     void FixedUpdate(){
         Debug.Log("FixedUpdate time :" + Time.deltaTime);
 
-        PlayerPositionZ = transform.position.z + SpeedZ;
+        //PlayerPositionZ = transform.position.z + SpeedZ;
         SkyLinePositionZ = SkyLine.transform.position.z+SpeedZ;
         PlayerPositionX = transform.position.x;
 
@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
             }
         }
         
-        transform.position = new Vector3(PlayerPositionX , -55f , PlayerPositionZ );
+        transform.position = new Vector3(PlayerPositionX , -55f , transform.position.z );
         //transform.position = Vector3.Lerp(transform.position, new Vector3(PlayerPositionX, -55f ,PlayerPositionZ), Time.deltaTime * 1.5f);
         SkyLine.transform.position= new Vector3(SkyLine.transform.position.x, SkyLine.transform.position.y, SkyLinePositionZ );
     

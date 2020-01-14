@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    //keep player moving foward
+    public float Speed = 0.005f;
+    private float positionZ = 0.0f;
+    
     // Update is called once per frame
     void Update()
     {
-        
+        positionZ = positionZ + Speed;
+        transform.position = new Vector3(transform.position.x, transform.position.y, positionZ);
     }
 }
